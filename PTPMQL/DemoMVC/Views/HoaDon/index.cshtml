@@ -1,0 +1,6 @@
+<h2>Tính Tiền Hóa Đơn</h2>
+<form asp-action="Index" method="post">
+    <div><label>Số lượng:</label><input asp-for="SoLuong" /><span asp-validation-for="SoLuong" class="text-danger"></span></div>
+    <div><label>Đơn giá:</label><input asp-for="DonGia" /><span asp-validation-for="DonGia" class="text-danger"></span></div>
+    <button type="submit">Tính Tiền</button>
+</form>
