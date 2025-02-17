@@ -1,0 +1,26 @@
+<h2>ĐO CHỈ SỐ CÂN NẶNG - CHIỀU CAO (BMI) ONLINE</h2>
+
+    <div>
+        <label>Giới tính của bạn</label>
+        @Html.RadioButtonFor(m => m.Gender, "Nam") Nam
+        @Html.RadioButtonFor(m => m.Gender, "Nữ") Nữ
+    </div>
+
+    <div>
+        <label>Chiều cao của bạn (cm)</label>
+        @Html.TextBoxFor(m => m.Height)
+    </div>
+
+    <div>
+        <label>Cân nặng của bạn (kg)</label>
+        @Html.TextBoxFor(m => m.Weight)
+    </div>
+
+    <button type="submit">Xem kết quả</button>
+    <button type="reset">Đặt lại</button>
+}
+
+@if (ViewBag.BMIResult != null)
+{
+    <h3>Kết quả BMI của bạn: @ViewBag.BMIResult</h3>
+}
