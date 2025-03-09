@@ -6,6 +6,6 @@ namespace DemoMVC.Models
         public double DiemB { get; set; }
         public double DiemC { get; set; }
 
-        public double DiemMonHoc => (DiemA * 0.6) + (DiemB * 0.3) + (DiemC * 0.1);
+      
     }
 }
