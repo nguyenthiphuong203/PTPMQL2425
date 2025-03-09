@@ -1,31 +1,30 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using DemoMVC.Models;
 using DemoMVC.Data;
+using DemoMVC.Models;
 
 
 namespace DemoMVC.Controllers
 {
     public class PersonController : Controller
+    
     {
         private readonly ApplicationDbContext _context;
+        private object await_context;
 
         public PersonController(ApplicationDbContext context)
         {
             _context = context;
         }
-
         public async Task<IActionResult> Index()
         {
             var model = await _context.Persons.ToListAsync();
             return View(model);
         }
-
         public IActionResult Create()
         {
             return View();
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("PersonID,FullName,Address")] Person person)
@@ -38,27 +37,25 @@ namespace DemoMVC.Controllers
             }
             return View(person);
         }
-
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit (string ID)
         {
-            if (id == null || _context.Persons == null)
+            if (ID == null || _context.Persons == null)
             {
                 return NotFound();
-            }
+            } 
 
-            var person = await _context.Persons.FindAsync(id);
+            var person = await _context.Persons.FindAsync(ID);
             if (person == null)
-            {
+            { 
                 return NotFound();
             }
             return View(person);
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("PersonID,FullName,Address")] Person person)
+        public async Task<IActionResult> Edit(string ID, [Bind("PersonID,FullName,Address")] Person person)
         {
-            if (id != person.PersonID)
+            if (ID != person.PersonID)
             {
                 return NotFound();
             }
@@ -72,7 +69,7 @@ namespace DemoMVC.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonExists(person.PersonID))
+                    if (!PersonExists(person.PersonID) )
                     {
                         return NotFound();
                     }
@@ -85,15 +82,15 @@ namespace DemoMVC.Controllers
             }
             return View(person);
         }
-
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(string ID)
         {
-            if (id == null || _context.Persons == null)
+            if (ID ==null || _context.Person == null)
             {
                 return NotFound();
             }
 
-            var person = await _context.Persons.FirstOrDefaultAsync(m => m.PersonsID == id);
+            var person = await _context.Persons
+                .FirstOrDefaultAsync(m => m.PersonID == ID);
             if (person == null)
             {
                 return NotFound();
@@ -101,16 +98,15 @@ namespace DemoMVC.Controllers
 
             return View(person);
         }
-
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(string ID)
         {
-            if (_context.Persons == null)
+            if (_context.Person == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Persons' is null.");
+                return Problem("Entity set 'ApplicationDbContext.Person' is null."); 
             }
-            var person = await _context.Persons.FindAsync(id);
+            var person = await _context.Persons.FindAsync(ID);
             if (person != null)
             {
                 _context.Persons.Remove(person);
@@ -119,18 +115,19 @@ namespace DemoMVC.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
-        private bool PersonExists(string id)
+        private bool PersonExists(string ID)
         {
-            return (_context.Persons?.Any(e => e.PersonID == id)).GetValueOrDefault();
+            return (_context.Persons?.Any(e => e.PersonID == ID)).GetValueOrDefault();
         }
 
-        [HttpPost]
-        public IActionResult IndexPost(Person ps)
-        {
-            string output = "xin chao " + ps.PersonID + " - " + ps.FullName + " - " + ps.Address;
-            ViewBag.infoPerson = output;
-            return View("Index", _context.Persons.ToList()); // Pass the model to the view
-        }
+     
+    [HttpPost]
+    public IActionResult IndexPost(Person ps)
+    
+    {
+        string str0utput ="xin chao" + ps.PersonID + "-"+ ps.FullName+"-"+ps.Address;
+        ViewBag.infoPerson = str0utput;
+        return View("Index");
+    }
     }
 }

@@ -1,11 +1,13 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace DemoMVC.Models
 {
-    public class DiemMonHoc
-    {
-        public double DiemA { get; set; }
-        public double DiemB { get; set; }
-        public double DiemC { get; set; }
+    public class TinhDiem{
+        public float DiemA { get; set;}
+        public float DiemB { get; set;}
+        public float DiemC { get; set;}
+        public float DiemTong { get; set;}
 
-      
+
     }
 }

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using DemoMVC.Models;
+using DemoMVC.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(options => 

@@ -1,24 +1,27 @@
-<h2>Tính Điểm Môn Học</h2>
 
-<form asp-action="Index" method="post">
-    <div>
-        <label>Điểm A:</label>
-        <input asp-for="DiemA" />
-        <span asp-validation-for="DiemA" class="text-danger"></span>
-    </div>
-    <div>
-        <label>Điểm B:</label>
-        <input asp-for="DiemB" />
-        <span asp-validation-for="DiemB" class="text-danger"></span>
-    </div>
-    <div>
-        <label>Điểm C:</label>
-        <input asp-for="DiemC" />
-        <span asp-validation-for="DiemC" class="text-danger"></span>
-    </div>
-    <button type="submit">Tính Điểm</button>
-</form>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@{
+    ViewData["Title"] = "Tính Điểm Môn Học";
 }
+
+<h1>Tính Điểm Môn Học</h1>
+
+    <div>
+        
+        <input type="float" name="DiemA" placeholder="số">
+    </div>
+
+    <div>
+        
+        <input type="float" name="DiemB" placeholder="số">
+    </div>
+
+    <div>
+        
+        <input type="float" name="DiemC" placeholder="số">
+    </div>
+
+    <div>
+        <input type="submit" value="Tính điểm tổng" />
+    </div>
+
+    <h2>Điểm tổng môn học: @ViewBag.DiemTong</h2>

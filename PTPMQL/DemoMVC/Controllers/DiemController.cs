@@ -1,28 +1,24 @@
-using DemoMVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using DemoMVC.Models;
 
 namespace DemoMVC.Controllers
 {
     public class DiemController : Controller
     {
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult TinhDiem()
         {
-            return View(new DiemMonHoc());
+            return View();
         }
 
         [HttpPost]
-        public IActionResult Index(DiemMonHoc model)
+        public IActionResult TinhDiem(TinhDiem diem)
         {
-            if (ModelState.IsValid)
-            {
-                return View("Result", model);
-            }
-            return View(model);
-        }
+                diem.DiemTong = (diem.DiemA * 0.6f) + (diem.DiemB * 0.3f) + (diem.DiemC * 0.1f);
 
-        public IActionResult Result(DiemMonHoc model)
-        {
-            return View(model);
+                ViewBag.DiemTong = diem.DiemTong;
+
+                return View(diem);
         }
     }
 }
