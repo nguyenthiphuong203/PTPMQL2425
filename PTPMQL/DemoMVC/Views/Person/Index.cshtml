@@ -1,5 +1,4 @@
-@using Microsoft.EntityFrameworkCore.Metadata.Internal
-@using static Microsoft.EntityFrameworkCore.DbLoggerCategory
+
 @model IEnumerable<DemoMVC.Models.Person>
 
 @{
@@ -26,6 +25,7 @@
     <tbody>
 @foreach ( var item in Model) {
     <tr>
+       
         <td>
             @Html.DisplayFor(modelItem => item.FullName)
         </td>
