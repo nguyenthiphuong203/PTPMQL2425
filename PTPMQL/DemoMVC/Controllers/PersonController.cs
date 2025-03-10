@@ -10,15 +10,14 @@ namespace DemoMVC.Controllers
     
     {
         private readonly ApplicationDbContext _context;
-        private object await_context;
-
+      
         public PersonController(ApplicationDbContext context)
         {
             _context = context;
         }
         public async Task<IActionResult> Index()
         {
-            var model = await _context.Persons.ToListAsync();
+            var model = await _context.Person.ToListAsync();
             return View(model);
         }
         public IActionResult Create()
@@ -39,12 +38,12 @@ namespace DemoMVC.Controllers
         }
         public async Task<IActionResult> Edit (string ID)
         {
-            if (ID == null || _context.Persons == null)
+            if (ID == null || _context.Person == null)
             {
                 return NotFound();
             } 
 
-            var person = await _context.Persons.FindAsync(ID);
+            var person = await _context.Person.FindAsync(ID);
             if (person == null)
             { 
                 return NotFound();
@@ -89,7 +88,7 @@ namespace DemoMVC.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Persons
+            var person = await _context.Person
                 .FirstOrDefaultAsync(m => m.PersonID == ID);
             if (person == null)
             {
@@ -106,10 +105,10 @@ namespace DemoMVC.Controllers
             {
                 return Problem("Entity set 'ApplicationDbContext.Person' is null."); 
             }
-            var person = await _context.Persons.FindAsync(ID);
+            var person = await _context.Person.FindAsync(ID);
             if (person != null)
             {
-                _context.Persons.Remove(person);
+                _context.Person.Remove(person);
             }
 
             await _context.SaveChangesAsync();
@@ -117,7 +116,7 @@ namespace DemoMVC.Controllers
         }
         private bool PersonExists(string ID)
         {
-            return (_context.Persons?.Any(e => e.PersonID == ID)).GetValueOrDefault();
+            return (_context.Person?.Any(e => e.PersonID == ID)).GetValueOrDefault();
         }
 
      

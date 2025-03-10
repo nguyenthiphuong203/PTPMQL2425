@@ -13,7 +13,7 @@ namespace DemoMVC.Data
         }
 
         // Use plural naming for DbSet
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<Student> Students { get; set; } 
+        public DbSet<Person> Person { get; set; }
+        public DbSet<Student> Student { get; set; } 
     }
 }
