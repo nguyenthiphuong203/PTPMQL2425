@@ -1,10 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 
 using DemoMVC.Models;
-
 namespace DemoMVC.Data
 {
-    public class ApplicationDbContext : DbContext
+    using Microsoft.EntityFrameworkCore;
+    using DemoMVC.Models;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    
     {
         
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) 
@@ -12,10 +15,7 @@ namespace DemoMVC.Data
        {} 
 
         // Use plural naming for DbSet
-        public DbSet<Person> Person { get; set; }
-
-       
-       
+        public DbSet<Person> Person { get; set; } = default!;
         public DbSet<Student> Student { get; set; } 
         public DbSet<DemoMVC.Models.Employee> Employee { get; set; } = default!;
     }
