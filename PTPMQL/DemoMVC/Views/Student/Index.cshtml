@@ -1,4 +1,24 @@
-@model DemoMVC.Models.Student
-<h1>View Index cua StudentController</h1>
-<h2>Id: @Model.Id</h2>
-<h2>FullName: @Model.FullName</h2>
+@model IEnumerable<DemoMVC.Models.Student>
+<a asp-action="Create" class="w3-btn w3-success w3-border">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>FullName</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.FullName</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@student.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@student.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
