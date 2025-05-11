@@ -9,9 +9,11 @@ D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\DemoMVC.dll
 D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\DemoMVC.pdb
 D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\Azure.Core.dll
 D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\Azure.Identity.dll
+D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
 D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\EPPlus.dll
 D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\EPPlus.Interfaces.dll
 D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\Humanizer.dll
+D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\MailKit.dll
 D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\System.Web.Mvc.dll
 D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\System.Web.Razor.dll
 D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\System.Web.Helpers.dll
@@ -87,6 +89,7 @@ D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.VisualStudio.Web.CodeGen
 D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\Microsoft.Web.Infrastructure.dll
+D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\MimeKit.dll
 D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\Mono.TextTemplating.dll
 D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\Newtonsoft.Json.dll
 D:\PTPMQL2425\PTPMQL\DemoMVC\bin\Debug\net9.0\NuGet.Common.dll
