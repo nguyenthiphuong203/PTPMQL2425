@@ -44,6 +44,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.6.3, )"
+            },
             "EPPlus": {
               "target": "Package",
               "version": "[8.0.2, )"
@@ -52,9 +56,17 @@
               "target": "Package",
               "version": "[4.11.0, )"
             },
+            "Microsoft.AspNetCore.Authentication.Google": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[9.0.5, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
@@ -64,7 +76,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[9.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.SQLite": {
               "target": "Package",
@@ -84,9 +96,9 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
-            "X.PagedList.Mvc": {
+            "X.PagedList.Mvc.Core": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[8.1.0, )"
             }
           },
           "imports": [
